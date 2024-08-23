@@ -124,7 +124,7 @@ function App() {
       </section>
 
       <footer className="footer">
-        <p>© 2024</p>
+        <p></p>
       </footer>
     </div>
   );
