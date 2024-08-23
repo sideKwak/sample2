@@ -1,45 +1,237 @@
+/* 공통 스타일 */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
 }
 
+/* 헤더 스타일 */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
-  background: rgba(255, 255, 255, 0.8);
-  position: absolute;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
   width: 100%;
-  top: 0;
-  z-index: 1000;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-  height: 50px;
+  width: 10%;
+  min-width: 50px;
+  max-width: 50px;
+  margin-left: 2rem; /* 로고를 오른쪽으로 살짝 이동 */
 }
 
-.nav-list {
-  list-style: none;
+.logo-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-top: 2.2rem;
+}
+
+.nav {
+  flex: 1;
   display: flex;
-  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem; /* 메뉴를 왼쪽으로 살짝 이동 */
 }
 
-.hero {
-  height: 100vh;
+.menu-text {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-text li {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.menu-icon {
+  display: none;
+  width: 5%;
+  min-width: 20px;
+  max-width: 40px;
+}
+
+/* 슬라이드 섹션 스타일 */
+.slides {
+  flex: 1;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  overflow: hidden;
 }
 
-.video-bg {
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
-.hero-content {
+/* 제품 보기 버튼 스타일 */
+.view-product-btn {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 70%;
+  left: 4.1%;
+  transform: translateX(-50%);
+  background-color: black;
   color: white;
-  font-size: 2rem;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.view-product-btn:hover {
+  background-color: #ff8561;
+}
+
+/* 3번째 슬라이드에 대한 특수 버튼 스타일 */
+.special-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.special-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* 설명 텍스트 스타일 */
+.description {
+  position: absolute;
+  bottom: 80%;
+  left: 25%;
+  transform: translateX(-50%);
+  color: black;
+  font-size: 0.9rem;
+  max-width: 80%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* 3번째 슬라이드에 대한 특수 설명 텍스트 스타일 */
+.special-description {
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* 슬라이드 인디케이터 스타일 */
+.slide-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.indicator {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 푸터 스타일 */
+.footer {
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  color: #555;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  height: 10vh;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .menu-text {
+    display: none; /* 모바일에서 텍스트 메뉴 숨김 */
+  }
+
+  .menu-icon {
+    display: block; /* 모바일에서 메뉴 아이콘 표시 */
+    margin-right: 0.5rem;
+  }
+
+  .logo {
+    margin-left: -1rem; /* 모바일에서도 로고를 약간 오른쪽으로 이동 */
+  }
+
+  .logo-text {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .slides {
+    height: auto;
+  }
+
+  .slide-img {
+    height: 100%;
+  }
+
+  .view-product-btn {
+    left: 10%;
+    bottom: 60%; /* 모바일에서 버튼 위치를 약간 위로 조정 */
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .description {
+    left: 50%;
+    bottom: 70%; /* 모바일에서 설명 텍스트 위치 조정 */
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
 }
