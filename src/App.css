@@ -219,7 +219,7 @@
   }
 
   .view-product-btn {
-    left: 10%;
+    left: 25%;
     bottom: 60%; /* 모바일에서 버튼 위치를 약간 위로 조정 */
     padding: 10px 20px;
     font-size: 0.9rem;
