@@ -98,14 +98,11 @@ function App() {
               className="slide-img"
             />
           </AnimatePresence>
-          <motion.button
+          <button
             className={`view-product-btn ${slides[currentIndex].isSpecial ? 'special-btn' : ''}`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => alert(`Clicked: ${slides[currentIndex].buttonText}`)}
           >
             {slides[currentIndex].buttonText}
-          </motion.button>
+          </button>
           <motion.p
             className={`description ${slides[currentIndex].isSpecial ? 'special-description' : ''}`}
           >
